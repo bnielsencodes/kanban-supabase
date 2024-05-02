@@ -14,6 +14,7 @@ const supabase = createClient(
 
 export default function LoginPage() {
   return (
+    <>
       <Auth
         supabaseClient={supabase}
         // show magic link sign-in option
