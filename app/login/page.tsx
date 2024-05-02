@@ -31,7 +31,7 @@ export default function LoginPage() {
           [
           ]
         }
-        redirectTo="http://localhost:3000/auth/callback"
+        redirectTo="https://kanban-murex-eta.vercel.app/auth/callback"
       />
     </>
   );
