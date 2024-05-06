@@ -34,10 +34,27 @@ const config: Config = {
       xl: "1440px",
     },
     extend: {
+      animation: {
+        wave: "wave 5s linear infinite",
+      },
+      borderColor: {
+        input: "rgba(130, 143, 163, 0.25)",
+      },
+      boxShadow: {
+        boardsModalDark: "0 10px 20px 0px rgba(54, 78, 126, 0.25)",
+        boardsModalLight: "0 10px 20px 0px rgba(0, 0, 0, 0.5)",
+        loader: "0 5px 12px rgba(0, 0, 0, 0.15)",
+        loaderInset: "0 0 30px 4px rgba(0, 0, 0, 0.5) inset",
+      },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        cross: "url('/assets/icon-cross.svg')",
+      },
+      fontFamily: {
+        sans: ["var(--font-plus-jakarta-sans)"],
+      },
+      placeholderColor: {
+        dark: "rgba(0, 1, 18, 0.25)",
+        light: "rgba(255, 255, 255, 0.25)",
       },
     },
   },
