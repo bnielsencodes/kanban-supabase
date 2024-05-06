@@ -23,6 +23,16 @@ const config: Config = {
       warning: "#ea5555",
       "warning-hover": "#ff9898",
     },
+    screens: {
+      // => @media (min-width: 640px) { ... }
+      sm: "640px",
+      // => @media (min-width: 768px) { ... }
+      md: "768px",
+      // => @media (min-width: 1024px) { ... }
+      lg: "1024px",
+      // => @media (min-width: 1440px) { ... }
+      xl: "1440px",
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
