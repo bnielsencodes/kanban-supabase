@@ -38,11 +38,6 @@ body,
 
 /* Grid */
 
-.container {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
 .row {
   position: relative;
   width: 100%;
@@ -111,13 +106,6 @@ body,
   display: none;
 }
 
-@media only screen and (min-width: 33.75em) {
-  /* 540px */
-  .container {
-    width: 80%;
-  }
-}
-
 @media only screen and (min-width: 45em) {
   /* 720px */
   .col-1 {
@@ -161,25 +149,17 @@ body,
   }
 }
 
-@media only screen and (min-width: 60em) {
-  /* 960px */
-  .container {
-    width: 75%;
-    max-width: 60rem;
-  }
-}
-
 /* Forms */
 
-label {
+/* label {
   display: block;
   margin: 5px 0;
   color: var(--custom-color-secondary);
   font-size: 0.8rem;
   text-transform: uppercase;
-}
+} */
 
-input {
+/* input {
   width: 100%;
   border-radius: 5px;
   border: var(--custom-border);
@@ -187,7 +167,7 @@ input {
   font-size: 0.9rem;
   background-color: var(--custom-bg-color);
   color: var(--custom-color);
-}
+} */
 
 input[disabled] {
   color: var(--custom-color-secondary);
@@ -240,7 +220,7 @@ input[disabled] {
 
 /* Button */
 
-button,
+/* button,
 .button {
   color: var(--custom-color);
   border: var(--custom-border);
@@ -259,7 +239,7 @@ button.primary,
 .button.primary {
   background-color: var(--custom-color-brand);
   border: 1px solid var(--custom-color-brand);
-}
+} */
 
 /* Widgets */
 
@@ -350,27 +330,36 @@ button.primary,
 }
 
 .form-widget {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 20px; */
 }
 
 .form-widget > .button {
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   background-color: #444444;
   text-transform: none !important;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease; */
 }
 
 .form-widget .button:hover {
-  background-color: #2a2a2a;
+  /* background-color: #2a2a2a; */
 }
 
-.form-widget .button > .loader {
+/* .form-widget .button > .loader {
   width: 17px;
   animation: spin 1s linear infinite;
   filter: invert(1);
+} */
+
+@keyframes wave {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
