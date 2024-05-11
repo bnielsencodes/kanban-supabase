@@ -1,4 +1,5 @@
 import React, { FC, useState, useEffect } from "react";
+import BoardsList from "./BoardsList";
 import ThemeToggle from "./ThemeToggle";
 import AvatarButton from "./AvatarButton";
 import clsx from "clsx";
@@ -86,6 +87,17 @@ const BoardsModal: FC<AccountProps> = ({
             : "invisible -translate-y-2/4 opacity-0"
         }`}
       >
+        <BoardsList
+          {...{
+            placeholderData,
+            setPlaceholderData,
+            setShowBoardsModal,
+            setShowAddBoardModal,
+            currentBoard,
+            setCurrentBoard,
+          }}
+        />
+
         <div
           className={clsx(
             "mx-auto mt-auto flex h-12 w-[235px] items-center justify-center rounded-md",
