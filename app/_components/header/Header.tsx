@@ -13,6 +13,10 @@ export default function Header({
   currentBoard,
   setCurrentBoard,
   setShowAddBoardModal,
+  showEditBoardModal,
+  setShowEditBoardModal,
+  showDeleteBoardModal,
+  setShowDeleteBoardModal,
   handleSaveBoard,
   handleRemoveBoard,
 }: {
@@ -62,6 +66,10 @@ export default function Header({
   };
   setCurrentBoard: React.Dispatch<React.SetStateAction<any>>;
   setShowAddBoardModal: React.Dispatch<React.SetStateAction<boolean>>;
+  showEditBoardModal: boolean;
+  setShowEditBoardModal: React.Dispatch<React.SetStateAction<boolean>>;
+  showDeleteBoardModal: boolean;
+  setShowDeleteBoardModal: React.Dispatch<React.SetStateAction<boolean>>;
   handleSaveBoard: (id: number) => void;
   handleRemoveBoard: (id: number) => void;
 }) {
