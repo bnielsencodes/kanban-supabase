@@ -2,6 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import iconChevronUp from "/public/assets/icon-chevron-up.svg";
 import iconChevronDown from "/public/assets/icon-chevron-down.svg";
+import BoardsModal from "../modals/boards-list/BoardsModal";
 
 export default function BoardSelect({
   session,
@@ -85,6 +86,21 @@ export default function BoardSelect({
           sizes="100vw"
         />
       )}
+
+      <BoardsModal
+        {...{
+          session,
+          darkMode,
+          toggleTheme,
+          placeholderData,
+          setPlaceholderData,
+          showBoardsModal,
+          setShowBoardsModal,
+          setShowAddBoardModal,
+          currentBoard,
+          setCurrentBoard,
+        }}
+      />
     </div>
   );
 }
