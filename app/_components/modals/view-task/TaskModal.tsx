@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ellipsisIcon from "/public/assets/icon-vertical-ellipsis.svg";
+import Subtasks from "../../taskboard/Subtasks";
 
 export default function TaskModal() {
   return (
@@ -23,6 +24,7 @@ export default function TaskModal() {
         Now we need to finalize the first pricing model we<span>&apos</span>ll
         use. Keep iterating the subtasks until we have a coherent proposition.
       </p>
+      <Subtasks />
       <div className="current-status">
         <label htmlFor="select-status">Current Status</label>
         <select name="" id="select-status">
