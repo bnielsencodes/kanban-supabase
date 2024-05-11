@@ -1,7 +1,13 @@
 "use client";
 import React, { FC, useState, useEffect } from "react";
 import { createClient } from "@/utils/supabase/client";
+import data from "./data";
+import Auth from "./_components/login/Auth";
 import Header from "./_components/header/Header";
+import CurrentBoard from "./_components/taskboard/CurrentBoard";
+import NoBoards from "./_components/NoBoards";
+import AddBoardModal from "./_components/modals/add-board/AddBoardModal";
+import clsx from "clsx";
 
 interface Session {
   user: {
