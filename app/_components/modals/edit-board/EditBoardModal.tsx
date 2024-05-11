@@ -1,3 +1,5 @@
+import EditBoardForm from "./EditBoardForm";
+
 export default function EditBoardModal({
   darkMode,
   boardCount,
@@ -42,6 +44,16 @@ export default function EditBoardModal({
           darkMode ? "bg-neutral-300" : "bg-neutral-800"
         } select-none`}
       >
+        <EditBoardForm
+          {...{
+            darkMode,
+            boardCount,
+            setBoardCount,
+            currentBoard,
+            setShowEditBoardModal,
+            handleSaveBoard,
+          }}
+        />
       </div>
     </div>
   );
