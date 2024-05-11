@@ -127,6 +127,12 @@ const App: FC = () => {
               darkMode ? "bg-neutral-200" : "bg-neutral-700"
             }`}
           >
+            {/* 
+              Show current board.
+              If no boards created, show <NoBoards> component 
+            */}
+            {placeholderData.length > 0 ? <CurrentBoard /> : <NoBoards />}
+
           </main>
         </>
       )}
