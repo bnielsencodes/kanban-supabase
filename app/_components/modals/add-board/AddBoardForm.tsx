@@ -32,6 +32,7 @@ export default function AddBoardForm({
   setBoardCount: React.Dispatch<React.SetStateAction<number>>;
   setShowAddBoardModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
+  const [boardTitle, setBoardTitle] = useState("");
   return (
     <form id="form" className="flex flex-col">
       {/* modal title */}
