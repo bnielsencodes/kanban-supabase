@@ -1,5 +1,6 @@
 import Image from "next/image";
 import logoMobile from "/public/assets/logo-mobile.svg";
+import BoardSelect from "./BoardSelect";
 
 export default function HeaderLeft({
   session,
@@ -65,6 +66,19 @@ export default function HeaderLeft({
         width="0"
         height="0"
         sizes="100vw"
+      />
+
+      <BoardSelect
+        {...{
+          session,
+          darkMode,
+          toggleTheme,
+          placeholderData,
+          setPlaceholderData,
+          setShowAddBoardModal,
+          currentBoard,
+          setCurrentBoard,
+        }}
       />
     </div>
   );
