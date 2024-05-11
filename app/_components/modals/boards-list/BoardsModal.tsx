@@ -1,4 +1,5 @@
 import React, { FC, useState, useEffect } from "react";
+import ThemeToggle from "./ThemeToggle";
 import clsx from "clsx";
 
 interface AccountProps {
@@ -93,6 +94,12 @@ const BoardsModal: FC<AccountProps> = ({
             },
           )}
         >
+          <ThemeToggle
+            {...{
+              darkMode,
+              toggleTheme,
+            }}
+          />
         </div>
       </div>
     </div>
