@@ -1,3 +1,4 @@
+import { useState } from "react";
 import HeaderLeft from "./HeaderLeft";
 import HeaderRight from "./HeaderRight";
 
@@ -64,6 +65,9 @@ export default function Header({
   handleSaveBoard: (id: number) => void;
   handleRemoveBoard: (id: number) => void;
 }) {
+  const [showEditDeleteBoardModal, setShowEditDeleteBoardModal] =
+    useState(false);
+
   return (
     <div
       className={`flex items-center justify-between p-4 ${
