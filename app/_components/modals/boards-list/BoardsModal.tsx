@@ -1,5 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
+import AvatarButton from "./AvatarButton";
 import clsx from "clsx";
 
 interface AccountProps {
@@ -100,6 +101,7 @@ const BoardsModal: FC<AccountProps> = ({
               toggleTheme,
             }}
           />
+          <AvatarButton {...{ session }} />
         </div>
       </div>
     </div>
