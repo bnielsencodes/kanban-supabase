@@ -3,6 +3,7 @@ import HeaderLeft from "./HeaderLeft";
 import HeaderRight from "./HeaderRight";
 import EditDeleteBoardModal from "./EditDeleteBoardModal";
 import EditBoardModal from "../modals/edit-board/EditBoardModal";
+import DeleteBoardModal from "./DeleteBoardModal";
 
 export default function Header({
   session,
@@ -120,6 +121,17 @@ export default function Header({
             currentBoard,
             setShowEditBoardModal,
             handleSaveBoard,
+          }}
+        />
+      )}
+
+      {showDeleteBoardModal && (
+        <DeleteBoardModal
+          {...{
+            darkMode,
+            currentBoard,
+            setShowDeleteBoardModal,
+            handleRemoveBoard,
           }}
         />
       )}
