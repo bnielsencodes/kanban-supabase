@@ -1,6 +1,7 @@
 "use client";
 import React, { FC, useState, useEffect } from "react";
 import { createClient } from "@/utils/supabase/client";
+import Header from "./_components/header/Header";
 
 interface Session {
   user: {
@@ -60,6 +61,27 @@ const App: FC = () => {
         <Auth {...{ darkMode }} />
       ) : (
         <>
+          <Header
+            {...{
+              session,
+              darkMode,
+              toggleTheme,
+              placeholderData,
+              setPlaceholderData,
+              boardCount,
+              setBoardCount,
+              currentBoard,
+              setCurrentBoard,
+              setShowAddBoardModal,
+              showEditBoardModal,
+              setShowEditBoardModal,
+              showDeleteBoardModal,
+              setShowDeleteBoardModal,
+              handleSaveBoard,
+              handleRemoveBoard,
+            }}
+          />
+
           <main
             className={`main h-screen ${
               darkMode ? "bg-neutral-200" : "bg-neutral-700"
