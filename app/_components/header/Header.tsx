@@ -1,3 +1,4 @@
+import HeaderLeft from "./HeaderLeft";
 import HeaderRight from "./HeaderRight";
 
 export default function Header({
@@ -69,6 +70,19 @@ export default function Header({
         darkMode ? "bg-neutral-300" : "bg-neutral-800"
       }`}
     >
+      <HeaderLeft
+        {...{
+          session,
+          darkMode,
+          toggleTheme,
+          placeholderData,
+          setPlaceholderData,
+          setShowAddBoardModal,
+          currentBoard,
+          setCurrentBoard,
+        }}
+      />
+
       <HeaderRight {...{ setShowEditDeleteBoardModal }} />
     </div>
   );
