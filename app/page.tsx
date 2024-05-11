@@ -48,6 +48,23 @@ const App: FC = () => {
     setCurrentBoard(placeholderData[0]);
   }
 
+  //
+  // REMOVE BOARD
+  //
+
+  // remove board function
+  function handleRemoveBoard(id: number) {
+    const filteredList = placeholderData.filter((item) => item.id !== id);
+    const mappedList = filteredList.map((item) => ({
+      ...item,
+      id: filteredList.indexOf(item) + 1,
+    }));
+    placeholderData.splice(0, placeholderData.length, ...mappedList);
+    setBoardCount(boardCount - 1);
+    setShowDeleteBoardModal(false);
+    setCurrentBoard(placeholderData[0]);
+  }
+
   // useEffect only runs on the client, so now we can safely show the UI
   useEffect(() => {
     setMounted(true);
