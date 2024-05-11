@@ -1,3 +1,5 @@
+import AddBoardForm from "./AddBoardForm";
+
 export default function AddBoardModal({
   darkMode,
   placeholderData,
@@ -43,6 +45,16 @@ export default function AddBoardModal({
           darkMode ? "bg-neutral-300" : "bg-neutral-800"
         } select-none`}
       >
+        <AddBoardForm
+          {...{
+            darkMode,
+            placeholderData,
+            setPlaceholderData,
+            boardCount,
+            setBoardCount,
+            setShowAddBoardModal,
+          }}
+        />
       </div>
     </div>
   );
