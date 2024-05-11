@@ -40,6 +40,14 @@ export default function BoardSelect({
   const [showBoardsModal, setShowBoardsModal] = useState(false);
   const [currentBoard, setCurrentBoard] = useState(placeholderData[0]);
 
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    if (event.target.checked) {
+      setShowBoardsModal(true);
+    } else {
+      setShowBoardsModal(false);
+    }
+  };
+
   return (
     <div className="group relative flex cursor-pointer items-center">
       <input
