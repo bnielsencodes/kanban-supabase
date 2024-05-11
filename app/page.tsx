@@ -14,6 +14,12 @@ const App: FC = () => {
   const [session, setSession] = useState<Session | null>(null);
   const [darkMode, setDarkMode] = useState(true);
   const [mounted, setMounted] = useState(false);
+  const [showAddBoardModal, setShowAddBoardModal] = useState(false);
+  const [showEditBoardModal, setShowEditBoardModal] = useState(false);
+  const [showDeleteBoardModal, setShowDeleteBoardModal] = useState(false);
+  const [placeholderData, setPlaceholderData] = useState(data);
+  const [boardCount, setBoardCount] = useState(placeholderData.length);
+  const [currentBoard, setCurrentBoard] = useState(placeholderData[0]);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }: any) => {
