@@ -1,3 +1,5 @@
+import TaskList from "./TaskList";
+
 export default function Column({
   item,
   cols,
@@ -31,6 +33,7 @@ export default function Column({
         <div className="column-title--color-dot"></div>
         <p className="column-title"></p>
       </div>
+      <TaskList {...{ cols }} />
     </div>
   );
 }
