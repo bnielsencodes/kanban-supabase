@@ -2,6 +2,11 @@ import { useState } from "react";
 
 export default function Checkbox() {
   const [checked, setChecked] = useState(false);
+
+  function toggleChecked() {
+    setChecked(!checked);
+  }
+
   return (
     <div
     >
