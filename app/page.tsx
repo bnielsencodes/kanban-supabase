@@ -133,6 +133,19 @@ const App: FC = () => {
             */}
             {placeholderData.length > 0 ? <CurrentBoard /> : <NoBoards />}
 
+            {/* AddBoardModal */}
+            {showAddBoardModal && (
+              <AddBoardModal
+                {...{
+                  darkMode,
+                  placeholderData,
+                  setPlaceholderData,
+                  boardCount,
+                  setBoardCount,
+                  setShowAddBoardModal,
+                }}
+              />
+            )}
           </main>
         </>
       )}
