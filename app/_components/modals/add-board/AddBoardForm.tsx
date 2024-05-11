@@ -33,6 +33,13 @@ export default function AddBoardForm({
   setShowAddBoardModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const [boardTitle, setBoardTitle] = useState("");
+
+  // Set NAME property of newBoard state
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    const { name, value } = event.target;
+    console.log(value);
+    setBoardTitle(value);
+  };
   return (
     <form id="form" className="flex flex-col">
       {/* modal title */}
