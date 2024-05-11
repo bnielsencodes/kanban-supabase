@@ -1,3 +1,5 @@
+import Task from "./Task";
+
 export default function TaskList({
   cols,
 }: {
@@ -13,8 +15,16 @@ export default function TaskList({
     }[];
   }[];
 }) {
+  const tasks = cols[0].tasks;
+
+  // map through data.js to create task components
+  const task = tasks.map((item) => {
+    return <Task key={item.id} {...{ item }} />;
+  });
+
   return (
     <div className="task-list">
+      {task}
     </div>
   );
 }
