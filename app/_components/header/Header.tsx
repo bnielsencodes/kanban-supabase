@@ -2,6 +2,7 @@ import { useState } from "react";
 import HeaderLeft from "./HeaderLeft";
 import HeaderRight from "./HeaderRight";
 import EditDeleteBoardModal from "./EditDeleteBoardModal";
+import EditBoardModal from "../modals/edit-board/EditBoardModal";
 
 export default function Header({
   session,
@@ -106,6 +107,19 @@ export default function Header({
             setShowEditDeleteBoardModal,
             setShowEditBoardModal,
             setShowDeleteBoardModal,
+          }}
+        />
+      )}
+
+      {showEditBoardModal && (
+        <EditBoardModal
+          {...{
+            darkMode,
+            boardCount,
+            setBoardCount,
+            currentBoard,
+            setShowEditBoardModal,
+            handleSaveBoard,
           }}
         />
       )}
