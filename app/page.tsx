@@ -23,6 +23,12 @@ const App: FC = () => {
     });
   }, []);
 
+  // toggle dark mode
+  function toggleTheme() {
+    setDarkMode((prevMode) => !prevMode);
+    // window.localStorage.setItem("theme", htmlElement.dataset.theme);
+  }
+
       </div>
   return (
     <div
