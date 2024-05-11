@@ -1,3 +1,5 @@
+import HeaderRight from "./HeaderRight";
+
 export default function Header({
   session,
   darkMode,
@@ -67,6 +69,7 @@ export default function Header({
         darkMode ? "bg-neutral-300" : "bg-neutral-800"
       }`}
     >
+      <HeaderRight {...{ setShowEditDeleteBoardModal }} />
     </div>
   );
 }
