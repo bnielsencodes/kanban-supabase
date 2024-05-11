@@ -11,6 +11,7 @@ interface Session {
 const App: FC = () => {
   const supabase = createClient();
   const [session, setSession] = useState<Session | null>(null);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }: any) => {
