@@ -40,6 +40,15 @@ export default function AddBoardForm({
     console.log(value);
     setBoardTitle(value);
   };
+
+  const handleSubmit = () => {
+    let data = placeholderData;
+    data.push({ id: boardCount + 1, name: boardTitle, columns: [] });
+    localStorage.setItem("data", JSON.stringify(data));
+    setBoardCount((prevState) => prevState + 1);
+    setShowAddBoardModal(false);
+  };
+
   return (
     <form id="form" className="flex flex-col">
       {/* modal title */}
