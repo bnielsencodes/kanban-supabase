@@ -70,17 +70,17 @@ const BoardsModal: FC<AccountProps> = ({
 }) => {
   return (
     <div
-      className={`absolute left-[-56px] top-[-19px] z-30 h-screen w-screen cursor-default select-none ${
+      className={`absolute left-[-56px] top-[46px] h-screen w-screen cursor-default select-none ${
         showBoardsModal ? "opacity-100" : "opacity-0"
       } ${showBoardsModal ? "visible" : "invisible"}`}
     >
       <div
-        className="bg-black/40 absolute left-0 top-0 h-full w-full"
+        className="absolute left-0 top-0 h-full w-full bg-[#979797]"
         onClick={() => setShowBoardsModal(false)}
       ></div>
 
       <div
-        className={`boards-modal relative z-40 mx-auto mb-0 mt-[76px] flex w-[264px] flex-col rounded-lg py-4 pt-[17px] ${
+        className={`boards-modal relative mx-auto mb-0 mt-4 flex w-[264px] flex-col rounded-lg py-4 pt-[17px] ${
           darkMode ? "bg-neutral-300" : "bg-neutral-800"
         } ${
           darkMode ? "shadow-boardsModalDark" : "shadow-boardsModalLight"
@@ -103,9 +103,8 @@ const BoardsModal: FC<AccountProps> = ({
 
         <div
           className={clsx(
-            darkMode
-              ? "mx-auto mt-auto flex h-12 w-[235px] items-center justify-center rounded-md"
-              : "bg-neutral-700",
+            "mx-auto mt-auto flex h-12 w-[235px] items-center justify-center rounded-md",
+            darkMode ? "bg-neutral-200" : "bg-neutral-700",
           )}
         >
           <div

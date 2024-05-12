@@ -81,7 +81,7 @@ export default function Header({
 
   return (
     <div
-      className={`flex items-center justify-between p-4 ${
+      className={`relative flex h-16 items-center justify-between px-4 ${
         darkMode ? "bg-neutral-300" : "bg-neutral-800"
       }`}
     >
