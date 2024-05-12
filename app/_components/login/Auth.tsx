@@ -28,10 +28,7 @@ export default function Auth({ darkMode }: { darkMode: boolean }) {
     <div
       className={clsx(
         "absolute left-1/2 top-1/2 mx-auto w-[calc(100%-32px)] max-w-[352px] -translate-x-1/2 -translate-y-1/2 lg:max-w-[416px]",
-        {
-          "text-neutral-800": darkMode,
-          "text-neutral-300": !darkMode,
-        },
+        darkMode ? "text-neutral-800" : "text-neutral-300",
       )}
     >
       <Image
@@ -42,10 +39,10 @@ export default function Auth({ darkMode }: { darkMode: boolean }) {
       />
       <form className="mt-5 flex flex-col gap-2" onSubmit={handleLogin}>
         <label
-          className={clsx("", {
-            "text-neutral-800": darkMode,
-            "text-neutral-500": !darkMode,
-          })}
+          className={clsx(
+            "",
+            darkMode ? "text-neutral-800" : "text-neutral-500",
+          )}
           htmlFor="email"
         >
           Sign in via magic link with your email below
@@ -53,10 +50,9 @@ export default function Auth({ darkMode }: { darkMode: boolean }) {
         <input
           className={clsx(
             "mb-5 h-10 w-full cursor-pointer rounded border-[1px] border-input pl-4 text-[13px] duration-300 lg:hover:border-primary",
-            {
-              "bg-neutral-300 placeholder-light": darkMode,
-              "bg-neutral-800 placeholder-dark": !darkMode,
-            },
+            darkMode
+              ? "bg-neutral-300 placeholder-light"
+              : "bg-neutral-800 placeholder-dark",
           )}
           id="email"
           type="email"

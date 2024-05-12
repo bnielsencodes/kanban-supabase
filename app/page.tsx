@@ -82,10 +82,10 @@ const App: FC = () => {
   if (!mounted) {
     return (
       <div
-        className={clsx("flex h-screen w-screen items-center justify-center", {
-          "bg-neutral-200": darkMode,
-          "bg-neutral-700": !darkMode,
-        })}
+        className={clsx(
+          "flex h-screen w-screen items-center justify-center",
+          darkMode ? "bg-neutral-200" : "bg-neutral-700",
+        )}
       >
         {/* loader */}
         <span className="loader relative h-12 w-12 overflow-hidden rounded-full bg-primary shadow-[0_5px_12px_rgba(0,0,0,.15),inset_0_0_30px_4px_rgba(0,0,0,.15)] before:absolute before:top-[-40%] before:h-full before:w-full before:animate-wave before:rounded-[30%] before:bg-neutral-500 before:content-[''] after:absolute after:top-[-40%] after:h-full after:w-full after:animate-wave after:rounded-[45%] after:bg-neutral-600 after:content-[''] lg:h-16 lg:w-16"></span>
@@ -95,10 +95,10 @@ const App: FC = () => {
 
   return (
     <div
-      className={clsx("h-screen w-screen", {
-        "bg-neutral-200": darkMode,
-        "bg-neutral-700": !darkMode,
-      })}
+      className={clsx(
+        "h-screen w-screen",
+        darkMode ? "bg-neutral-200" : "bg-neutral-700",
+      )}
     >
       {!session ? (
         <Auth {...{ darkMode }} />

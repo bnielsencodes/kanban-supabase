@@ -80,10 +80,7 @@ const Account: FC<AccountProps> = ({ session, darkMode }) => {
     <div
       className={clsx(
         "absolute left-1/2 top-1/2 mx-auto w-[calc(100%-32px)] max-w-[352px] -translate-x-1/2 -translate-y-1/2 lg:max-w-[416px]",
-        {
-          "text-neutral-800": darkMode,
-          "text-neutral-300": !darkMode,
-        },
+        darkMode ? "text-neutral-800" : "text-neutral-300",
       )}
     >
       <form
@@ -99,10 +96,10 @@ const Account: FC<AccountProps> = ({ session, darkMode }) => {
         />
         <div className="mt-5 flex flex-col gap-2">
           <label
-            className={clsx("text-[12px]", {
-              "text-neutral-800": darkMode,
-              "text-neutral-500": !darkMode,
-            })}
+            className={clsx(
+              "text-[12px]",
+              darkMode ? "text-neutral-800" : "text-neutral-500",
+            )}
             htmlFor="email"
           >
             Email<span className="ml-[2px]">&#42;</span>
@@ -110,10 +107,9 @@ const Account: FC<AccountProps> = ({ session, darkMode }) => {
           <input
             className={clsx(
               "h-10 w-full cursor-pointer rounded border-[1px] border-input pl-4 text-[13px] duration-300 lg:hover:border-primary",
-              {
-                "bg-neutral-300 placeholder-light": darkMode,
-                "bg-neutral-800 placeholder-dark": !darkMode,
-              },
+              darkMode
+                ? "bg-neutral-300 placeholder-light"
+                : "bg-neutral-800 placeholder-dark",
             )}
             id="email"
             type="text"
@@ -123,10 +119,10 @@ const Account: FC<AccountProps> = ({ session, darkMode }) => {
         </div>
         <div className="mt-5 flex flex-col gap-2">
           <label
-            className={clsx("text-[12px]", {
-              "text-neutral-800": darkMode,
-              "text-neutral-500": !darkMode,
-            })}
+            className={clsx(
+              "text-[12px]",
+              darkMode ? "text-neutral-800" : "text-neutral-500",
+            )}
             htmlFor="fullname"
           >
             Full Name
@@ -134,10 +130,9 @@ const Account: FC<AccountProps> = ({ session, darkMode }) => {
           <input
             className={clsx(
               "h-10 w-full cursor-pointer rounded border-[1px] border-input pl-4 text-[13px] duration-300 lg:hover:border-primary",
-              {
-                "bg-neutral-300 placeholder-light": darkMode,
-                "bg-neutral-800 placeholder-dark": !darkMode,
-              },
+              darkMode
+                ? "bg-neutral-300 placeholder-light"
+                : "bg-neutral-800 placeholder-dark",
             )}
             id="fullname"
             type="text"
@@ -147,10 +142,10 @@ const Account: FC<AccountProps> = ({ session, darkMode }) => {
         </div>
         <div className="mt-5 flex flex-col gap-2">
           <label
-            className={clsx("text-[12px]", {
-              "text-neutral-800": darkMode,
-              "text-neutral-500": !darkMode,
-            })}
+            className={clsx(
+              "text-[12px]",
+              darkMode ? "text-neutral-800" : "text-neutral-500",
+            )}
             htmlFor="username"
           >
             Username<span className="ml-[2px]">&#42;</span>
@@ -158,10 +153,9 @@ const Account: FC<AccountProps> = ({ session, darkMode }) => {
           <input
             className={clsx(
               "h-10 w-full cursor-pointer rounded border-[1px] border-input pl-4 text-[13px] duration-300 lg:hover:border-primary",
-              {
-                "bg-neutral-300 placeholder-light": darkMode,
-                "bg-neutral-800 placeholder-dark": !darkMode,
-              },
+              darkMode
+                ? "bg-neutral-300 placeholder-light"
+                : "bg-neutral-800 placeholder-dark",
             )}
             id="username"
             type="text"

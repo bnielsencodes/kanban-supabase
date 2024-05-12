@@ -103,11 +103,9 @@ const BoardsModal: FC<AccountProps> = ({
 
         <div
           className={clsx(
-            "mx-auto mt-auto flex h-12 w-[235px] items-center justify-center rounded-md",
-            {
-              "bg-neutral-200": darkMode,
-              "bg-neutral-700": !darkMode,
-            },
+            darkMode
+              ? "mx-auto mt-auto flex h-12 w-[235px] items-center justify-center rounded-md"
+              : "bg-neutral-700",
           )}
         >
           <div
