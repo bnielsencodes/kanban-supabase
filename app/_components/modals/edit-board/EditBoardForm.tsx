@@ -57,7 +57,7 @@ export default function EditBoardForm({
           } ${
             darkMode ? "placeholder-neutral-800" : "placeholder-neutral-100"
           }`}
-          onChange={handleChange}
+          // onChange={handleChange}
           type="text"
           name="name"
           placeholder={currentBoard.name}
