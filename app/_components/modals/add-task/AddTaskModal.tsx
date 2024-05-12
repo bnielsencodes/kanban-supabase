@@ -19,8 +19,8 @@ export default function AddTaskModal() {
           <textarea
             name=""
             id=""
-            cols=""
-            rows="4"
+            cols={0}
+            rows={4}
             placeholder="e.g. It’s always good to take a break. This 15 minute break will recharge the batteries a little."
           ></textarea>
         </div>
