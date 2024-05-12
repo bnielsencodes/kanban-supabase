@@ -8,7 +8,7 @@ import DeleteBoardModal from "./DeleteBoardModal";
 export default function Header({
   session,
   darkMode,
-  toggleTheme,
+  handleToggleTheme,
   placeholderData,
   setPlaceholderData,
   boardCount,
@@ -25,7 +25,7 @@ export default function Header({
 }: {
   session: any;
   darkMode: boolean;
-  toggleTheme: () => void;
+  handleToggleTheme: () => void;
   placeholderData: {
     id: number;
     name: string;
@@ -89,7 +89,7 @@ export default function Header({
         {...{
           session,
           darkMode,
-          toggleTheme,
+          handleToggleTheme,
           placeholderData,
           setPlaceholderData,
           setShowAddBoardModal,

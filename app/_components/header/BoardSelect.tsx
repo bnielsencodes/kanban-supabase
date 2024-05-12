@@ -7,15 +7,16 @@ import BoardsModal from "../modals/boards-list/BoardsModal";
 export default function BoardSelect({
   session,
   darkMode,
-  toggleTheme,
+  handleToggleTheme,
   placeholderData,
   setPlaceholderData,
   setShowAddBoardModal,
 }: // currentBoard,
+// setCurrentBoard,
 {
   session: any;
   darkMode: boolean;
-  toggleTheme: () => void;
+  handleToggleTheme: () => void;
   placeholderData: {
     id: number;
     name: string;
@@ -91,7 +92,7 @@ export default function BoardSelect({
         {...{
           session,
           darkMode,
-          toggleTheme,
+          handleToggleTheme,
           placeholderData,
           setPlaceholderData,
           showBoardsModal,

@@ -5,7 +5,7 @@ import BoardSelect from "./BoardSelect";
 export default function HeaderLeft({
   session,
   darkMode,
-  toggleTheme,
+  handleToggleTheme,
   placeholderData,
   setPlaceholderData,
   setShowAddBoardModal,
@@ -14,7 +14,7 @@ export default function HeaderLeft({
 }: {
   session: any;
   darkMode: boolean;
-  toggleTheme: () => void;
+  handleToggleTheme: () => void;
   placeholderData: {
     id: number;
     name: string;
@@ -72,7 +72,7 @@ export default function HeaderLeft({
         {...{
           session,
           darkMode,
-          toggleTheme,
+          handleToggleTheme,
           placeholderData,
           setPlaceholderData,
           setShowAddBoardModal,

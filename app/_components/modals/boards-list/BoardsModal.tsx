@@ -7,7 +7,7 @@ import clsx from "clsx";
 interface AccountProps {
   session: any;
   darkMode: boolean;
-  toggleTheme: () => void;
+  handleToggleTheme: () => void;
   placeholderData: {
     id: number;
     name: string;
@@ -56,7 +56,7 @@ interface AccountProps {
 const BoardsModal: FC<AccountProps> = ({
   session,
   darkMode,
-  toggleTheme,
+  handleToggleTheme,
   placeholderData,
   setPlaceholderData,
   showBoardsModal,
@@ -113,6 +113,7 @@ const BoardsModal: FC<AccountProps> = ({
               toggleTheme,
             }}
           />
+                handleToggleTheme,
           <AvatarButton {...{ session }} />
         </div>
       </div>

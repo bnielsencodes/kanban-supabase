@@ -108,7 +108,7 @@ const App: FC = () => {
             {...{
               session,
               darkMode,
-              toggleTheme,
+              handleToggleTheme,
               placeholderData,
               setPlaceholderData,
               boardCount,
