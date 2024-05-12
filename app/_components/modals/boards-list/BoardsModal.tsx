@@ -1,4 +1,7 @@
 import React, { FC, useState, useEffect } from "react";
+import Image from "next/image";
+import iconLight from "/public/assets/icon-light-theme.svg";
+import iconDark from "/public/assets/icon-dark-theme.svg";
 import BoardsList from "./BoardsList";
 import ThemeToggle from "./ThemeToggle";
 import AvatarButton from "./AvatarButton";
@@ -107,13 +110,33 @@ const BoardsModal: FC<AccountProps> = ({
             },
           )}
         >
-          <ThemeToggle
-            {...{
-              darkMode,
-              toggleTheme,
-            }}
-          />
+          <div
+            className={clsx(
+              "flex h-full w-[calc(100%-50px)] items-center justify-center border-r-[1px]",
+              darkMode ? "border-neutral-300" : "border-neutral-800",
+            )}
+          >
+            <Image
+              src={iconLight}
+              alt="sun icon"
+              width="19"
+              height="19"
+              sizes="100vw"
+            />
+            <ThemeToggle
+              {...{
+                darkMode,
                 handleToggleTheme,
+              }}
+            />
+            <Image
+              src={iconDark}
+              alt="moon and star icon"
+              width="15"
+              height="15"
+              sizes="100vw"
+            />
+          </div>
           <AvatarButton {...{ session }} />
         </div>
       </div>
