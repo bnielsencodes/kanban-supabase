@@ -22,6 +22,7 @@ const config: Config = {
       "primary-hover": "#a8a4ff",
       warning: "#ea5555",
       "warning-hover": "#ff9898",
+      modal: "#979797",
     },
     screens: {
       // => @media (min-width: 640px) { ... }
@@ -41,8 +42,7 @@ const config: Config = {
         input: "rgba(130, 143, 163, 0.25)",
       },
       boxShadow: {
-        boardsModalDark: "0 10px 20px 0px rgba(54, 78, 126, 0.25)",
-        boardsModalLight: "0 10px 20px 0px rgba(0, 0, 0, 0.5)",
+        boardsModal: "0 10px 20px 0px rgba(54, 78, 126, 0.25)",
         loader: "0 5px 12px rgba(0, 0, 0, 0.15)",
         loaderInset: "0 0 30px 4px rgba(0, 0, 0, 0.5) inset",
       },
