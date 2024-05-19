@@ -20,6 +20,7 @@ const config: Config = {
       },
       primary: "#635fc7",
       "primary-hover": "#a8a4ff",
+      "primary-pale": "rgba(99, 95, 199, 0.1)",
       warning: "#ea5555",
       "warning-hover": "#ff9898",
       modal: "#979797",
