@@ -23,7 +23,7 @@ const config: Config = {
       "primary-pale": "rgba(99, 95, 199, 0.1)",
       warning: "#ea5555",
       "warning-hover": "#ff9898",
-      modal: "#979797",
+      modal: "rgba(0, 0, 0, 0.5)",
     },
     screens: {
       // => @media (min-width: 640px) { ... }
