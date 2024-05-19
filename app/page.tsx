@@ -7,6 +7,7 @@ import Header from "./_components/header/Header";
 import CurrentBoard from "./_components/taskboard/CurrentBoard";
 import NoBoards from "./_components/NoBoards";
 import AddBoardModal from "./_components/modals/add-board/AddBoardModal";
+import AccountModal from "./_components/modals/account/AccountModal";
 import clsx from "clsx";
 
 interface Session {
@@ -120,6 +121,7 @@ const App: FC = () => {
               setShowEditBoardModal,
               showDeleteBoardModal,
               setShowDeleteBoardModal,
+              setShowAccountModal,
               handleSaveBoard,
               handleRemoveBoard,
             }}
@@ -146,6 +148,18 @@ const App: FC = () => {
                   boardCount,
                   setBoardCount,
                   setShowAddBoardModal,
+                }}
+              />
+            )}
+
+            {/* AccountModal */}
+            {showAccountModal && (
+              <AccountModal
+                {...{
+                  session,
+                  darkMode,
+                  showAccountModal,
+                  setShowAccountModal,
                 }}
               />
             )}
