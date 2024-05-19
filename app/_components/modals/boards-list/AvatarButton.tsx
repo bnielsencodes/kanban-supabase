@@ -60,12 +60,12 @@ const AvatarButton: FC<AccountPage> = ({ session }) => {
 
   return (
     <Link
-      className="flex h-full w-[50px] items-center justify-center gap-6"
+      className="group/button flex h-full w-[50px] items-center justify-center gap-6"
       href="/account"
     >
       {avatarUrl ? (
         <Image
-          className="rounded-full"
+          className="rounded-full transition-opacity group-hover/button:opacity-75"
           src={avatarUrl}
           alt="Avatar"
           width="32"

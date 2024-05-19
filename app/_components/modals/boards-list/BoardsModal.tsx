@@ -91,6 +91,7 @@ const BoardsModal: FC<AccountProps> = ({
       >
         <BoardsList
           {...{
+            darkMode,
             placeholderData,
             setPlaceholderData,
             setShowBoardsModal,
@@ -108,7 +109,7 @@ const BoardsModal: FC<AccountProps> = ({
         >
           <div
             className={clsx(
-              "flex h-full w-[calc(100%-50px)] items-center justify-center border-r-[1px]",
+              "flex h-full w-[calc(100%-50px)] items-center justify-center border-r-2",
               darkMode ? "border-neutral-300" : "border-neutral-800",
             )}
           >
