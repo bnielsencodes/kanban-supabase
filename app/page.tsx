@@ -24,6 +24,7 @@ const App: FC = () => {
   const [showAddBoardModal, setShowAddBoardModal] = useState(false);
   const [showEditBoardModal, setShowEditBoardModal] = useState(false);
   const [showDeleteBoardModal, setShowDeleteBoardModal] = useState(false);
+  const [showAccountModal, setShowAccountModal] = useState(false);
   const [placeholderData, setPlaceholderData] = useState(data);
   const [boardCount, setBoardCount] = useState(placeholderData.length);
   const [currentBoard, setCurrentBoard] = useState(placeholderData[0]);
