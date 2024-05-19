@@ -1,13 +1,18 @@
 import React, { FC, useEffect, useState } from "react";
 import { createClient } from "@/utils/supabase/client";
 import Image from "next/image";
-import Link from "next/link";
 
 interface AccountPage {
   session: any;
+  setShowBoardsModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowAccountModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const AvatarButton: FC<AccountPage> = ({ session }) => {
+const AvatarButton: FC<AccountPage> = ({
+  session,
+  setShowBoardsModal,
+  setShowAccountModal,
+}) => {
   const supabase = createClient();
   const [avatar_url, setAvatarUrl] = useState<string | null>(null);
   const [avatarUrl, setAvatarUrl2] = useState<string | null>(null);
@@ -58,26 +63,28 @@ const AvatarButton: FC<AccountPage> = ({ session }) => {
     }
   }
 
+  const handleClick = () => {
+    setShowBoardsModal(false);
+    setShowAccountModal(true);
+  };
+
   return (
-    <Link
-      className="group/button flex h-full w-[50px] items-center justify-center gap-6"
-      href="/account"
+    <div
+      className="group/button lg:hover:bg-primary-pale flex h-full w-[50px] items-center justify-center gap-6 transition-colors hover:cursor-pointer"
+      onClick={handleClick}
     >
       {avatarUrl ? (
         <Image
-          className="rounded-full transition-opacity group-hover/button:opacity-75"
+          className="rounded-full transition-opacity group-hover/button:opacity-80"
           src={avatarUrl}
           alt="Avatar"
           width="32"
           height="32"
         />
       ) : (
-        <div
-          className="avatar no-image"
-          style={{ height: "30px", width: "30px", borderRadius: "50px" }}
-        />
+        <div className="avatar no-image h-[30px] w-[30px] rounded-full" />
       )}
-    </Link>
+    </div>
   );
 };
 

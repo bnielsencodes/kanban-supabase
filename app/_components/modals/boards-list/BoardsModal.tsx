@@ -34,6 +34,7 @@ interface AccountProps {
   showBoardsModal: boolean;
   setShowBoardsModal: React.Dispatch<React.SetStateAction<boolean>>;
   setShowAddBoardModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowAccountModal: React.Dispatch<React.SetStateAction<boolean>>;
   currentBoard: {
     id: number;
     name: string;
@@ -65,24 +66,25 @@ const BoardsModal: FC<AccountProps> = ({
   showBoardsModal,
   setShowBoardsModal,
   setShowAddBoardModal,
+  setShowAccountModal,
   currentBoard,
   setCurrentBoard,
 }) => {
   return (
     <div
       className={clsx(
-        "absolute left-[-56px] top-[46px] h-screen w-screen cursor-default select-none",
+        "absolute left-[-56px] top-16 h-screen w-screen cursor-default select-none",
         showBoardsModal ? "visible opacity-100" : "invisible opacity-0",
       )}
     >
       <div
-        className="bg-modal absolute left-0 top-0 h-full w-full"
+        className="bg-modal absolute -top-[83px] bottom-0 left-0 right-0"
         onClick={() => setShowBoardsModal(false)}
       ></div>
 
       <div
         className={clsx(
-          "boards-modal shadow-boardsModal relative mx-auto mb-0 mt-4 flex w-[264px] select-none flex-col rounded-lg py-4 pt-[17px]",
+          "boards-modal shadow-boardsModal relative mx-auto flex w-[264px] select-none flex-col rounded-lg py-4 pt-[17px]",
           darkMode ? "bg-neutral-300" : "bg-neutral-800",
           showBoardsModal
             ? "visible translate-y-0 opacity-100"
@@ -134,7 +136,9 @@ const BoardsModal: FC<AccountProps> = ({
               sizes="100vw"
             />
           </div>
-          <AvatarButton {...{ session }} />
+          <AvatarButton
+            {...{ session, setShowBoardsModal, setShowAccountModal }}
+          />
         </div>
       </div>
     </div>

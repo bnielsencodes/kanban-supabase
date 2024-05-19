@@ -9,6 +9,7 @@ export default function HeaderLeft({
   placeholderData,
   setPlaceholderData,
   setShowAddBoardModal,
+  setShowAccountModal,
   currentBoard,
   setCurrentBoard,
 }: {
@@ -36,6 +37,7 @@ export default function HeaderLeft({
   }[];
   setPlaceholderData: React.Dispatch<React.SetStateAction<any>>;
   setShowAddBoardModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowAccountModal: React.Dispatch<React.SetStateAction<boolean>>;
   currentBoard: {
     id: number;
     name: string;
@@ -76,6 +78,7 @@ export default function HeaderLeft({
           placeholderData,
           setPlaceholderData,
           setShowAddBoardModal,
+          setShowAccountModal,
           currentBoard,
           setCurrentBoard,
         }}

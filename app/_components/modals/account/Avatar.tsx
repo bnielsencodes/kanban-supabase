@@ -1,14 +1,16 @@
 import React, { FC, useEffect, useState, ChangeEvent } from "react";
 import { createClient } from "@/utils/supabase/client";
 import Image from "next/image";
+import clsx from "clsx";
 
 interface AvatarProps {
+  darkMode: boolean;
   url: string;
   size: number;
   onUpload: (event: ChangeEvent<HTMLInputElement>, filePath: string) => void;
 }
 
-const Avatar: FC<AvatarProps> = ({ url, size, onUpload }) => {
+const Avatar: FC<AvatarProps> = ({ darkMode, url, size, onUpload }) => {
   const supabase = createClient();
   const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
   const [uploading, setUploading] = useState<boolean>(false);
@@ -66,7 +68,7 @@ const Avatar: FC<AvatarProps> = ({ url, size, onUpload }) => {
   }
 
   return (
-    <div className="flex items-center gap-6">
+    <div className="flex items-center gap-4">
       {avatarUrl ? (
         <Image
           className="rounded-full"
@@ -84,7 +86,12 @@ const Avatar: FC<AvatarProps> = ({ url, size, onUpload }) => {
 
       <div className="relative w-full">
         <label
-          className="flex h-12 w-full cursor-pointer items-center justify-center rounded-3xl bg-primary duration-300 lg:hover:bg-primary-hover"
+          className={clsx(
+            "flex h-12 w-full cursor-pointer items-center justify-center rounded-3xl text-primary duration-300",
+            darkMode
+              ? "bg-neutral-800 lg:hover:bg-opacity-80"
+              : "bg-primary-pale lg:hover:bg-primary lg:hover:bg-opacity-25",
+          )}
           htmlFor="single"
         >
           {uploading ? "Uploading ..." : "Upload"}
