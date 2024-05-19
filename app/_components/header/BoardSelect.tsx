@@ -11,6 +11,7 @@ export default function BoardSelect({
   placeholderData,
   setPlaceholderData,
   setShowAddBoardModal,
+  setShowAccountModal,
 }: // currentBoard,
 // setCurrentBoard,
 {
@@ -38,6 +39,7 @@ export default function BoardSelect({
   }[];
   setPlaceholderData: React.Dispatch<React.SetStateAction<any>>;
   setShowAddBoardModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowAccountModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const [showBoardsModal, setShowBoardsModal] = useState(false);
   const [currentBoard, setCurrentBoard] = useState(placeholderData[0]);
@@ -98,6 +100,7 @@ export default function BoardSelect({
           showBoardsModal,
           setShowBoardsModal,
           setShowAddBoardModal,
+          setShowAccountModal,
           currentBoard,
           setCurrentBoard,
         }}
