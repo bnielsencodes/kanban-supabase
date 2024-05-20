@@ -3,6 +3,7 @@ import Image from "next/image";
 import iconChevronUp from "/public/assets/icon-chevron-up.svg";
 import iconChevronDown from "/public/assets/icon-chevron-down.svg";
 import BoardsModal from "../modals/boards-list/BoardsModal";
+import clsx from "clsx";
 
 export default function BoardSelect({
   session,
@@ -53,18 +54,19 @@ export default function BoardSelect({
   };
 
   return (
-    <div className="group relative flex cursor-pointer items-center">
+    <div className="group relative flex cursor-pointer items-center md:hidden">
       <input
-        id="board-select-btn"
         className="hidden appearance-none focus-visible:outline-none"
+        id="board-select-btn"
         onChange={handleChange}
         type="checkbox"
         name="board-select"
       />
       <label
-        className={`mt-1 flex items-center gap-4 pr-[19px] ${
-          darkMode ? "text-neutral-800" : "text-neutral-100"
-        } select-none text-lg leading-[23px] group-hover:cursor-pointer`}
+        className={clsx(
+          "flex select-none items-center gap-4 pr-[19px] text-[18px] font-medium leading-[23px] group-hover:cursor-pointer",
+          darkMode ? "text-white" : "text-black",
+        )}
         htmlFor="board-select-btn"
       >
         {currentBoard.name}
@@ -72,7 +74,7 @@ export default function BoardSelect({
 
       {!showBoardsModal ? (
         <Image
-          className="pointer-events-none absolute right-0 top-[7px] mt-1"
+          className="pointer-events-none absolute right-0 top-[7px]"
           src={iconChevronDown}
           alt="chevron down icon"
           width="0"
@@ -81,7 +83,7 @@ export default function BoardSelect({
         />
       ) : (
         <Image
-          className="pointer-events-none absolute right-0 top-[7px] mt-1"
+          className="pointer-events-none absolute right-0 top-[7px]"
           src={iconChevronUp}
           alt="chevron up icon"
           width="0"
