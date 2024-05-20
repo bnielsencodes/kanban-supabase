@@ -71,14 +71,14 @@ const Avatar: FC<AvatarProps> = ({ darkMode, url, size, onUpload }) => {
     <div className="flex items-center gap-4">
       {avatarUrl ? (
         <Image
-          className="rounded-full"
+          className="h-[150px] w-[150px] rounded-full md:h-[175px] md:w-[175px]"
           src={avatarUrl}
           alt="Avatar"
-          width={150}
-          height={150}
+          width={0}
+          height={0}
         />
       ) : (
-        <div className="h-[150px] w-[285px] animate-pulse rounded-full bg-neutral-600" />
+        <div className="bg-lines-light h-[150px] w-[285px] animate-pulse rounded-full md:h-[175px] md:w-[322px]" />
       )}
 
       <div className="relative w-full">
@@ -86,7 +86,7 @@ const Avatar: FC<AvatarProps> = ({ darkMode, url, size, onUpload }) => {
           className={clsx(
             "flex h-12 w-full cursor-pointer items-center justify-center rounded-3xl text-primary duration-300",
             darkMode
-              ? "bg-neutral-800 lg:hover:bg-opacity-80"
+              ? "bg-white lg:hover:bg-opacity-80"
               : "bg-primary-pale lg:hover:bg-primary lg:hover:bg-opacity-25",
           )}
           htmlFor="single"

@@ -41,7 +41,7 @@ export default function EditBoardModal({
       ></div>
       <div
         className={`absolute left-1/2 top-[calc(50%+64px)] z-20 w-[343px] -translate-x-1/2 -translate-y-1/2 rounded-md p-6 ${
-          darkMode ? "bg-neutral-300" : "bg-neutral-800"
+          darkMode ? "bg-grey-dark" : "bg-white"
         } select-none`}
       >
         <EditBoardForm

@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 export default function EditDeleteBoardModal({
   darkMode,
   showEditDeleteBoardModal,
@@ -13,28 +15,32 @@ export default function EditDeleteBoardModal({
 }) {
   return (
     <div
-      className={`absolute top-0 right-0 z-30 w-screen h-screen select-none cursor-default ${
-        showEditDeleteBoardModal ? "opacity-100" : "opacity-0"
-      } ${showEditDeleteBoardModal ? "visible" : "invisible"}`}
+      className={clsx(
+        "absolute right-0 top-0 z-30 h-screen w-screen cursor-default select-none",
+        showEditDeleteBoardModal
+          ? "visible opacity-100"
+          : "invisible opacity-0",
+      )}
       onClick={() => setShowEditDeleteBoardModal(false)}
     >
       <div
-        className={`edit-delete-board-modal relative z-40 flex flex-col gap-4 w-[192px] pt-[17px] pb-[17px] pl-[17px] rounded-lg mt-[57px] mr-[23px] mb-0 ml-auto ${
-          darkMode ? "bg-neutral-200" : "bg-neutral-800"
-        } select-none ${
+        className={clsx(
+          "edit-delete-board-modal relative z-40 mb-0 ml-auto mr-4 mt-[57px] flex w-[192px] select-none flex-col gap-4 rounded-lg pb-[17px] pl-[17px] pt-[17px] md:mr-6 md:mt-[75px] lg:mt-[90px]",
+          darkMode ? "bg-background-dark" : "bg-white",
           showEditDeleteBoardModal
-            ? "opacity-100 visible translate-y-0"
-            : "opacity-0 invisible -translate-y-2/4"
-        }`}
+            ? "visible translate-y-0 opacity-100"
+            : "invisible -translate-y-2/4 opacity-0",
+        )}
       >
         <button
-          className="text-neutral-500 text-[13px] leading-[23px] text-left"
+          className="text-grey-medium text-left text-[13px] leading-[23px] hover:text-opacity-80"
           onClick={() => setShowEditBoardModal(true)}
         >
           Edit Board
         </button>
+
         <button
-          className="text-warning text-[13px] leading-[23px] text-left"
+          className="text-left text-[13px] leading-[23px] text-warning lg:hover:text-warning-hover"
           onClick={() => setShowDeleteBoardModal(true)}
         >
           Delete Board

@@ -91,16 +91,14 @@ const AccountModal: FC<AccountModalProps> = ({
       )}
     >
       <div
-        className="bg-modal absolute -top-[83px] bottom-0 left-0 right-0"
+        className="bg-overlay absolute -top-[83px] bottom-0 left-0 right-0"
         onClick={() => setShowAccountModal(false)}
       ></div>
 
       <div
         className={clsx(
-          "absolute left-1/2 top-1/2 mx-auto w-[calc(100%-32px)] max-w-[352px] -translate-x-1/2 -translate-y-1/2 rounded-md p-6 md:p-8 lg:max-w-[416px]",
-          darkMode
-            ? "bg-neutral-300 text-neutral-800"
-            : "bg-neutral-800 text-neutral-300",
+          "absolute left-1/2 top-1/2 mx-auto w-[calc(100%-32px)] max-w-[352px] -translate-x-1/2 -translate-y-1/2 rounded-md p-6 md:max-w-[480px] md:p-8 lg:max-w-[416px]",
+          darkMode ? "text-white bg-grey-dark" : "bg-white text-grey-dark",
         )}
       >
         <form
@@ -120,7 +118,7 @@ const AccountModal: FC<AccountModalProps> = ({
             <label
               className={clsx(
                 "text-[12px]",
-                darkMode ? "text-neutral-800" : "text-neutral-500",
+                darkMode ? "text-white" : "text-grey-medium",
               )}
               htmlFor="email"
             >
@@ -130,8 +128,8 @@ const AccountModal: FC<AccountModalProps> = ({
               className={clsx(
                 "h-10 w-full rounded border-[1px] border-input pl-4 text-[13px] leading-[23px] duration-300",
                 darkMode
-                  ? "bg-neutral-300 placeholder-light"
-                  : "bg-neutral-800 placeholder-dark",
+                  ? "bg-grey-dark placeholder-light"
+                  : "bg-white placeholder-dark",
               )}
               id="email"
               type="text"
@@ -143,7 +141,7 @@ const AccountModal: FC<AccountModalProps> = ({
             <label
               className={clsx(
                 "text-[12px]",
-                darkMode ? "text-neutral-800" : "text-neutral-500",
+                darkMode ? "text-white" : "text-grey-medium",
               )}
               htmlFor="fullname"
             >
@@ -153,8 +151,8 @@ const AccountModal: FC<AccountModalProps> = ({
               className={clsx(
                 "h-10 w-full cursor-pointer rounded border-[1px] border-input pl-4 text-[13px] leading-[23px] duration-300 lg:hover:border-primary",
                 darkMode
-                  ? "bg-neutral-300 placeholder-light"
-                  : "bg-neutral-800 text-neutral-100 placeholder-dark",
+                  ? "bg-grey-dark placeholder-light"
+                  : "bg-white text-black placeholder-dark",
               )}
               id="fullname"
               onChange={(e) => setFullname(e.target.value)}
@@ -166,7 +164,7 @@ const AccountModal: FC<AccountModalProps> = ({
             <label
               className={clsx(
                 "text-[12px]",
-                darkMode ? "text-neutral-800" : "text-neutral-500",
+                darkMode ? "text-white" : "text-grey-medium",
               )}
               htmlFor="username"
             >
@@ -176,8 +174,8 @@ const AccountModal: FC<AccountModalProps> = ({
               className={clsx(
                 "peer h-10 w-full cursor-pointer appearance-none rounded border-[1px] border-input pl-4 text-[13px] leading-[23px] duration-300 lg:hover:border-primary invalid:[&:not(:placeholder-shown):not(:focus)]:border-warning",
                 darkMode
-                  ? "bg-neutral-300 placeholder-light"
-                  : "bg-neutral-800 text-neutral-100 placeholder-dark",
+                  ? "bg-grey-dark placeholder-light"
+                  : "bg-white text-black placeholder-dark",
               )}
               id="username"
               onChange={(e) => setUsername(e.target.value)}
@@ -202,7 +200,7 @@ const AccountModal: FC<AccountModalProps> = ({
             className={clsx(
               "mt-6 block h-12 w-full rounded-3xl border-0 text-primary duration-300",
               darkMode
-                ? "bg-neutral-800 lg:hover:bg-opacity-80"
+                ? "bg-white lg:hover:bg-opacity-80"
                 : "bg-primary-pale lg:hover:bg-primary lg:hover:bg-opacity-25",
             )}
             type="button"

@@ -78,14 +78,14 @@ const BoardsModal: FC<AccountProps> = ({
       )}
     >
       <div
-        className="bg-modal absolute -top-[83px] bottom-0 left-0 right-0"
+        className="bg-overlay absolute -top-[85px] bottom-0 left-0 right-0"
         onClick={() => setShowBoardsModal(false)}
       ></div>
 
       <div
         className={clsx(
           "boards-modal shadow-boardsModal relative mx-auto flex w-[264px] select-none flex-col rounded-lg py-4 pt-[17px]",
-          darkMode ? "bg-neutral-300" : "bg-neutral-800",
+          darkMode ? "bg-grey-dark" : "bg-white",
           showBoardsModal
             ? "visible translate-y-0 opacity-100"
             : "invisible -translate-y-2/4 opacity-0",
@@ -106,13 +106,13 @@ const BoardsModal: FC<AccountProps> = ({
         <div
           className={clsx(
             "mx-auto mt-auto flex h-12 w-[235px] items-center justify-center rounded-md",
-            darkMode ? "bg-neutral-200" : "bg-neutral-700",
+            darkMode ? "bg-background-dark" : "bg-background-light",
           )}
         >
           <div
             className={clsx(
               "flex h-full w-[calc(100%-50px)] items-center justify-center border-r-2",
-              darkMode ? "border-neutral-300" : "border-neutral-800",
+              darkMode ? "border-grey-dark" : "border-white",
             )}
           >
             <Image

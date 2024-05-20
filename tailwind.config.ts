@@ -8,22 +8,26 @@ const config: Config = {
   ],
   theme: {
     colors: {
-      neutral: {
-        100: "#000112",
-        200: "#20212c",
-        300: "#2b2c37",
-        400: "#3e3f4e",
-        500: "#828fa3",
-        600: "#e4ebfa",
-        700: "#f4f7fd",
-        800: "#fff",
-      },
       primary: "#635fc7",
       "primary-hover": "#a8a4ff",
       "primary-pale": "rgba(99, 95, 199, 0.1)",
       warning: "#ea5555",
       "warning-hover": "#ff9898",
-      modal: "rgba(0, 0, 0, 0.5)",
+      black: "#000112",
+      white: "#fff",
+      grey: {
+        dark: "#2b2c37",
+        medium: "#828fa3",
+      },
+      background: {
+        dark: "#20212c",
+        light: "#f4f7fd",
+      },
+      lines: {
+        dark: "#3e3f4e",
+        light: "#e4ebfa",
+      },
+      overlay: "rgba(0, 0, 0, 0.5)",
     },
     screens: {
       // => @media (min-width: 640px) { ... }
