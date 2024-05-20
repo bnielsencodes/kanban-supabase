@@ -74,14 +74,11 @@ const Avatar: FC<AvatarProps> = ({ darkMode, url, size, onUpload }) => {
           className="rounded-full"
           src={avatarUrl}
           alt="Avatar"
-          width={size}
-          height={size}
+          width={150}
+          height={150}
         />
       ) : (
-        <div
-          className="avatar no-image"
-          style={{ height: size, width: "256px", borderRadius: "50px" }}
-        />
+        <div className="h-[150px] w-[285px] animate-pulse rounded-full bg-neutral-600" />
       )}
 
       <div className="relative w-full">
