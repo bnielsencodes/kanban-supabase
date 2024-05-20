@@ -4,6 +4,10 @@ import HeaderRight from "./HeaderRight";
 import EditDeleteBoardModal from "./EditDeleteBoardModal";
 import EditBoardModal from "../modals/edit-board/EditBoardModal";
 import DeleteBoardModal from "./DeleteBoardModal";
+import Image from "next/image";
+import logoDark from "/public/assets/logo-dark.svg";
+import logoLight from "/public/assets/logo-light.svg";
+import clsx from "clsx";
 
 export default function Header({
   session,
@@ -83,25 +87,55 @@ export default function Header({
 
   return (
     <div
-      className={`relative flex h-16 items-center justify-between px-4 ${
-        darkMode ? "bg-neutral-300" : "bg-neutral-800"
-      }`}
+      className={clsx(
+        "relative flex h-16 items-center justify-between pl-4 md:h-[81px] md:border-b-[1px] md:pl-6 md:pr-1 lg:h-[96px] lg:pr-3",
+        darkMode
+          ? "md:border-lines-dark bg-grey-dark"
+          : "md:border-lines-light bg-white",
+      )}
     >
-      <HeaderLeft
-        {...{
-          session,
-          darkMode,
-          handleToggleTheme,
-          placeholderData,
-          setPlaceholderData,
-          setShowAddBoardModal,
-          setShowAccountModal,
-          currentBoard,
-          setCurrentBoard,
-        }}
-      />
+      {/* tablet/desktop logo */}
+      <div
+        className={clsx(
+          "hidden h-full items-center border-r-[1px] md:flex md:pr-6 lg:pr-8",
+          darkMode ? "border-lines-dark" : "border-lines-light",
+        )}
+      >
+        <Image
+          className={clsx(darkMode ? "hidden" : "")}
+          src={logoDark}
+          alt="Kanban site logo"
+          width="153"
+          height="26"
+          sizes="100vw"
+        />
+        <Image
+          className={clsx(darkMode ? "" : "hidden")}
+          src={logoLight}
+          alt="Kanban site logo"
+          width="153"
+          height="26"
+          sizes="100vw"
+        />
+      </div>
 
-      <HeaderRight {...{ setShowEditDeleteBoardModal }} />
+      <div className="flex w-full items-center justify-between md:pl-6 lg:pb-2">
+        <HeaderLeft
+          {...{
+            session,
+            darkMode,
+            handleToggleTheme,
+            placeholderData,
+            setPlaceholderData,
+            setShowAddBoardModal,
+            setShowAccountModal,
+            currentBoard,
+            setCurrentBoard,
+          }}
+        />
+
+        <HeaderRight {...{ setShowEditDeleteBoardModal }} />
+      </div>
 
       {showEditDeleteBoardModal && (
         <EditDeleteBoardModal

@@ -9,7 +9,9 @@ export default function HeaderRight({
 }) {
   return (
     <div className="flex items-center">
-      <button className="flex items-center justify-center w-12 h-8 border-0 rounded-2xl bg-primary opacity-25 cursor-pointer">
+      {/* add task buttons */}
+      {/* mobile */}
+      <button className="flex h-8 w-12 cursor-pointer items-center justify-center rounded-2xl border-0 bg-primary opacity-25 md:hidden">
         <Image
           src={iconAdd}
           alt="add task icon"
@@ -18,13 +20,22 @@ export default function HeaderRight({
           sizes="100vw"
         />
       </button>
+      {/* tablet/desktop */}
       <button
-        className="w-[3.692px] h-4 ml-4 cursor-pointer"
+        className="text-white hidden h-12 w-[164px] rounded-3xl bg-primary text-[15px] font-medium leading-[15.5px] transition-colors md:block lg:hover:bg-primary-hover"
+      >
+        + Add New Task
+      </button>
+
+      {/* ellipsis button */}
+      <button
+        className="h-10 cursor-pointer pl-4 pr-5 md:ml-2"
         onClick={() => {
           setShowEditDeleteBoardModal(true);
         }}
       >
         <Image
+          className="h-4 w-[3.62px] md:h-5 md:w-[4.62px]"
           src={iconEllipsis}
           alt="vertical ellipsis icon"
           width="0"

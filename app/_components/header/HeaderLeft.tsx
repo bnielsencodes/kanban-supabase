@@ -1,6 +1,7 @@
 import Image from "next/image";
 import logoMobile from "/public/assets/logo-mobile.svg";
 import BoardSelect from "./BoardSelect";
+import clsx from "clsx";
 
 export default function HeaderLeft({
   session,
@@ -60,29 +61,42 @@ export default function HeaderLeft({
   setCurrentBoard: React.Dispatch<React.SetStateAction<any>>;
 }) {
   return (
-    <div className="flex items-center">
-      <Image
-        className="mr-4 h-[25px] w-6 "
-        src={logoMobile}
-        alt="Kanban site logo"
-        width="0"
-        height="0"
-        sizes="100vw"
-      />
+    <>
+      {/* mobile */}
+      <div className="flex items-center md:hidden">
+        <Image
+          className="mr-4 h-[25px] w-6"
+          src={logoMobile}
+          alt="Kanban site logo"
+          width="0"
+          height="0"
+          sizes="100vw"
+        />
 
-      <BoardSelect
-        {...{
-          session,
-          darkMode,
-          handleToggleTheme,
-          placeholderData,
-          setPlaceholderData,
-          setShowAddBoardModal,
-          setShowAccountModal,
-          currentBoard,
-          setCurrentBoard,
-        }}
-      />
-    </div>
+        <BoardSelect
+          {...{
+            session,
+            darkMode,
+            handleToggleTheme,
+            placeholderData,
+            setPlaceholderData,
+            setShowAddBoardModal,
+            setShowAccountModal,
+            currentBoard,
+            setCurrentBoard,
+          }}
+        />
+      </div>
+
+      {/* tablet/desktop */}
+      <p
+        className={clsx(
+          "hidden items-center font-medium tracking-wide group-hover:cursor-pointer md:block md:text-[20px] lg:text-[24px]",
+          darkMode ? "text-white" : "text-black",
+        )}
+      >
+        {currentBoard.name}
+      </p>
+    </>
   );
 }
