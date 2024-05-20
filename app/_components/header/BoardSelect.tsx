@@ -64,7 +64,7 @@ export default function BoardSelect({
       <label
         className={`mt-1 flex items-center gap-4 pr-[19px] ${
           darkMode ? "text-neutral-800" : "text-neutral-100"
-        } select-none text-lg font-bold leading-[23px] group-hover:cursor-pointer`}
+        } select-none text-lg leading-[23px] group-hover:cursor-pointer`}
         htmlFor="board-select-btn"
       >
         {currentBoard.name}
@@ -72,7 +72,7 @@ export default function BoardSelect({
 
       {!showBoardsModal ? (
         <Image
-          className="pointer-events-none absolute right-0 top-[7px] mt-[3px]"
+          className="pointer-events-none absolute right-0 top-[7px] mt-1"
           src={iconChevronDown}
           alt="chevron down icon"
           width="0"
@@ -81,7 +81,7 @@ export default function BoardSelect({
         />
       ) : (
         <Image
-          className="pointer-events-none absolute right-0 top-[7px] mt-[3px]"
+          className="pointer-events-none absolute right-0 top-[7px] mt-1"
           src={iconChevronUp}
           alt="chevron up icon"
           width="0"
