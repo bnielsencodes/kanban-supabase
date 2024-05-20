@@ -104,8 +104,9 @@ const AccountModal: FC<AccountModalProps> = ({
         )}
       >
         <form
-          onSubmit={(e) => updateProfile(e, avatar_url || "")}
           className="flex flex-col"
+          onSubmit={(e) => updateProfile(e, avatar_url || "")}
+          noValidate
         >
           <Avatar
             {...{ darkMode }}
@@ -127,7 +128,7 @@ const AccountModal: FC<AccountModalProps> = ({
             </label>
             <input
               className={clsx(
-                "h-10 w-full cursor-pointer rounded border-[1px] border-input pl-4 text-[13px] duration-300 lg:hover:border-primary",
+                "h-10 w-full rounded border-[1px] border-input pl-4 text-[13px] leading-[23px] duration-300",
                 darkMode
                   ? "bg-neutral-300 placeholder-light"
                   : "bg-neutral-800 placeholder-dark",
@@ -150,18 +151,18 @@ const AccountModal: FC<AccountModalProps> = ({
             </label>
             <input
               className={clsx(
-                "h-10 w-full cursor-pointer rounded border-[1px] border-input pl-4 text-[13px] duration-300 lg:hover:border-primary",
+                "h-10 w-full cursor-pointer rounded border-[1px] border-input pl-4 text-[13px] leading-[23px] duration-300 lg:hover:border-primary",
                 darkMode
                   ? "bg-neutral-300 placeholder-light"
-                  : "bg-neutral-800 placeholder-dark",
+                  : "bg-neutral-800 text-neutral-100 placeholder-dark",
               )}
               id="fullname"
-              type="text"
-              value={full_name || ""}
               onChange={(e) => setFullname(e.target.value)}
+              value={full_name || ""}
+              type="text"
             />
           </div>
-          <div className="mt-5 flex flex-col gap-2">
+          <div className="relative mt-5 flex flex-col gap-2">
             <label
               className={clsx(
                 "text-[12px]",
@@ -173,17 +174,20 @@ const AccountModal: FC<AccountModalProps> = ({
             </label>
             <input
               className={clsx(
-                "h-10 w-full cursor-pointer rounded border-[1px] border-input pl-4 text-[13px] duration-300 lg:hover:border-primary",
+                "peer h-10 w-full cursor-pointer appearance-none rounded border-[1px] border-input pl-4 text-[13px] leading-[23px] duration-300 lg:hover:border-primary invalid:[&:not(:placeholder-shown):not(:focus)]:border-warning",
                 darkMode
                   ? "bg-neutral-300 placeholder-light"
-                  : "bg-neutral-800 placeholder-dark",
+                  : "bg-neutral-800 text-neutral-100 placeholder-dark",
               )}
               id="username"
+              onChange={(e) => setUsername(e.target.value)}
+              value={username || ""}
               type="text"
               required
-              value={username || ""}
-              onChange={(e) => setUsername(e.target.value)}
             />
+            <span className="absolute bottom-[10px] right-4 hidden text-sm text-warning peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
+              Can&apos;t be empty
+            </span>
           </div>
 
           <button
