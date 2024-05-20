@@ -70,7 +70,7 @@ const AvatarButton: FC<AccountPage> = ({
 
   return (
     <div
-      className="group/button lg:hover:bg-primary-pale flex h-full w-[50px] items-center justify-center gap-6 transition-colors hover:cursor-pointer"
+      className="group/button lg:hover:bg-primary-pale flex h-full w-[50px] items-center justify-center gap-6 rounded-r-md transition-colors hover:cursor-pointer"
       onClick={handleClick}
     >
       {avatarUrl ? (
